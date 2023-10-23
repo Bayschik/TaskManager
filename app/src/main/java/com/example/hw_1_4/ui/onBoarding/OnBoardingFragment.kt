@@ -9,10 +9,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hw_1_4.R
 import com.example.hw_1_4.databinding.FragmentOnBoardingBinding
+import com.example.hw_1_4.ui.data.local.Pref
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding:FragmentOnBoardingBinding
     private val adapter = OnBoardingAdapter(this::onClick)
+
+    private val pref by lazy {
+        Pref(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +34,10 @@ class OnBoardingFragment : Fragment() {
 
         binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.indicator.setViewPager(binding.viewPager)
-
     }
 
     private fun onClick(){
+        pref.onShowed()
         findNavController().navigateUp()
     }
 
