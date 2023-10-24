@@ -8,22 +8,30 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.hw_1_4.databinding.FragmentProfileBinding
+import com.example.hw_1_4.loadImage
 import com.example.hw_1_4.ui.data.local.Pref
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
 
-    private val GALLERY_REQUEST_CODE = 123
+    private val binding get() = _binding!!
 
     private val pref by lazy {
         Pref(requireContext())
     }
 
-    private val binding get() = _binding!!
+    private val getCommentMedia = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val selectedFileUri = result.data?.data
+            pref.saveImage(selectedFileUri.toString())
+            binding.imageView.loadImage(selectedFileUri.toString())
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,34 +45,15 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.profileEt.setText(pref.getName())
+        binding.imageView.loadImage(pref.getImage().toString())
 
         binding.safeButton.setOnClickListener {
             pref.saveName(binding.profileEt.text.toString())
         }
-
-        binding.imageView.setImageURI(pref.getImage().toString().toUri())
-
         binding.imageView.setOnClickListener {
-            val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val selectedImageUri = data?.data
-            pref.saveImage(selectedImageUri.toString())
-            if (selectedImageUri != null) {
-                val sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-                val editor = sharedPreferences.edit()
-                editor.putString("image_uri", selectedImageUri.toString())
-                editor.apply()
-
-                //val savedImageUri = sharedPreferences.getString("image_uri", null)
-                Glide.with(this).load(selectedImageUri).into(binding.imageView)
-            }
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            getCommentMedia.launch(intent)
         }
     }
 
