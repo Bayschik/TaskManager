@@ -6,4 +6,9 @@
     <string name="profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="etTitle">Title</string>
+    <string name="etDesc">Description</string>
+    <string name="tvSave">Save</string>
+    <string name="itemTvTitle">Title</string>
+    <string name="itemTvDesc">Desc</string>
 </resources>

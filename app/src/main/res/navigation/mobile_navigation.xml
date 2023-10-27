@@ -34,4 +34,9 @@
         android:name="com.example.hw_1_4.ui.onBoarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.hw_1_4.ui.Task.TaskFragment"
+        android:label="Task"
+        tools:layout="@layout/fragment_task" />
 </navigation>
