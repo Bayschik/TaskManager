@@ -29,7 +29,6 @@ class OnBoardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.viewPager.adapter = adapter
-
         binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         binding.indicator.setViewPager(binding.viewPager)
     }
@@ -38,5 +37,4 @@ class OnBoardingFragment : Fragment() {
         pref.onShowed()
         findNavController().navigateUp()
     }
-
 }

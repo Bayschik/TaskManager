@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.example.hw_1_4.ui.data.local.db.AppDatabase
 
 class App:Application(){
-
     override fun onCreate() {
         super.onCreate()
         db = Room.databaseBuilder(
@@ -13,7 +12,6 @@ class App:Application(){
             AppDatabase::class.java, "database-name"
         ).allowMainThreadQueries().build()
     }
-
 
     companion object{
         lateinit var db:AppDatabase

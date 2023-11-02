@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.ImageView
 
 class Pref(context:Context) {
-
     private val pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
     fun isShow():Boolean{
@@ -16,12 +15,10 @@ class Pref(context:Context) {
 
     fun onShowed(){
         pref.edit().putBoolean(SHOWED_KEY, true).apply()
-        //Log.d("Called", "onShowed = true")
     }
 
     fun saveName(name:String){
         pref.edit().putString(SHOW_NAME, name).apply()
-        //Log.d("Called", "name is saved")
     }
 
     fun getName():String?{

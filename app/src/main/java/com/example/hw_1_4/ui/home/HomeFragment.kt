@@ -17,7 +17,6 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val adapter = TaskAdapter(this::onLongClick, this::onUpdateClick)
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,14 +29,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tasksRv.adapter = adapter
-        //
-        /*
-        setFragmentResultListener(RESULT_KEY){_,bundle ->
-            val data = bundle.getSerializable(TASK_KEY) as Task
-            adapter.addTask(data)
-        }
-         */
-        //
         val data = App.db.taskDao().getAll()
         adapter.addTasks(data)
 
@@ -47,12 +38,12 @@ class HomeFragment : Fragment() {
     }
     private fun onLongClick(position: Task): Boolean {
         val alertDialBuilder = AlertDialog.Builder(requireContext())
-        alertDialBuilder.setTitle("Удаление item")
-        alertDialBuilder.setMessage("Удалить текс?")
+            .setTitle("Удаление item")
+            .setMessage("Удалить текс?")
 
-        alertDialBuilder.setPositiveButton("Подтвердить"){ _, _ ->
-            App.db.taskDao().delete(position)
-            findNavController().navigate(R.id.navigation_home)
+            .setPositiveButton("Подтвердить"){ _, _ ->
+                App.db.taskDao().delete(position)
+                findNavController().navigate(R.id.navigation_home)
         }
 
         alertDialBuilder.setNegativeButton("Отмена"){_,_ ->

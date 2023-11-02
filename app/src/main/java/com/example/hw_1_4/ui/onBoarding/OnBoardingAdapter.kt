@@ -28,11 +28,9 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
 
     override fun getItemCount(): Int = list.size
 
-
     override fun onBindViewHolder(holder: OnBoardingViewHolder, position: Int) {
         holder.bind(list[position])
     }
-    
 
     inner class OnBoardingViewHolder(private val binding: ItemOnBoardingBinding) :
         ViewHolder(binding.root) {

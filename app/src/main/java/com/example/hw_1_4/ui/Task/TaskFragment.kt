@@ -13,7 +13,6 @@ import com.example.hw_1_4.databinding.FragmentTaskBinding
 class TaskFragment : Fragment() {
     private lateinit var binding: FragmentTaskBinding
     private var task:Task? = null
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,14 +44,8 @@ class TaskFragment : Fragment() {
                     title = binding.etTitle.text.toString(),
                     desc = binding.etDesc.text.toString()
                 )
-
-                //setFragmentResult(RESULT_KEY, bundleOf(TASK_KEY to data))
-
-                //
                 App.db.taskDao().insert(data)
-                //
                 findNavController().navigateUp()
-
             }
         }
     }
