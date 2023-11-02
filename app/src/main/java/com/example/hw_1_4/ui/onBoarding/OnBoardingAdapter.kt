@@ -10,7 +10,7 @@ import com.example.hw_1_4.loadImage
 
 class OnBoardingAdapter(private val onClick: () -> Unit) :
     Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
-    private val list = arrayListOf<OnBoardingModel>(
+    private val list = arrayListOf(
         OnBoardingModel("Shopping Place", "The bustling mall offered a wide variety \n of shops for all your shopping needs.", "https://clipart-library.com/img/2083233.png"),
         OnBoardingModel("Shopping on the way", "Stopped for some roadside \nshopping during our journey.", "https://cdn-icons-png.flaticon.com/512/3578/3578303.png"),
         OnBoardingModel("Pay on Delivery", "I prefer pay on delivery \nwhen shopping online for convenience.", "https://static.tildacdn.com/tild6436-6234-4665-b431-383530663135/visa-mastercard-logo.png")

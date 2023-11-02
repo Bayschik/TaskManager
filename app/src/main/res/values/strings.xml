@@ -11,4 +11,10 @@
     <string name="tvSave">Save</string>
     <string name="itemTvTitle">Title</string>
     <string name="itemTvDesc">Desc</string>
+    <string name="tv_update">UPDATE</string>
+    <string name="_update">Update</string>
+    <string name="tv_skip">Skip</string>
+    <string name="onBoarding_title">Title</string>
+    <string name="onBoarding_desc">Description</string>
+    <string name="onBoarding_getStarted">Get Started</string>
 </resources>

@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
-import com.example.hw_1_4.R
 import com.example.hw_1_4.databinding.FragmentOnBoardingBinding
 import com.example.hw_1_4.ui.data.local.Pref
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding:FragmentOnBoardingBinding
     private val adapter = OnBoardingAdapter(this::onClick)
-
     private val pref by lazy {
         Pref(requireContext())
     }
@@ -22,7 +20,7 @@ class OnBoardingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = FragmentOnBoardingBinding.inflate(layoutInflater)
         return binding.root
     }

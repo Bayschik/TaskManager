@@ -12,7 +12,6 @@ class Pref(context:Context) {
 
     fun isShow():Boolean{
         return pref.getBoolean(SHOWED_KEY, false)
-
     }
 
     fun onShowed(){
@@ -37,13 +36,10 @@ class Pref(context:Context) {
         return pref.getString(SHOW_IMAGE, null)
     }
 
-
     companion object{
         const val PREF_NAME = "pref.name"
         const val SHOWED_KEY = "showed.key"
         const val SHOW_NAME = "show.name"
-
         const val SHOW_IMAGE = "show.image"
     }
-
 }
