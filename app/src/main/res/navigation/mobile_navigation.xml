@@ -40,11 +40,15 @@
         android:name="com.example.hw_1_4.ui.Task.TaskFragment"
         android:label="Task"
         tools:layout="@layout/fragment_task" />
-
     <fragment
-        android:id="@+id/navigation_taskUpdateFragment"
-        android:name="com.example.hw_1_4.ui.Task.TaskFragment"
-        android:label="TaskUpdate"
-        tools:layout="@layout/fragment_task_update" />
+        android:id="@+id/codeFragment"
+        android:name="com.example.hw_1_4.ui.auth.code.CodeFragment"
+        android:label="Code"
+        tools:layout="@layout/fragment_code" />
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.hw_1_4.ui.auth.phone.PhoneFragment"
+        android:label="Phone Authentication"
+        tools:layout="@layout/fragment_phone" />
 
 </navigation>

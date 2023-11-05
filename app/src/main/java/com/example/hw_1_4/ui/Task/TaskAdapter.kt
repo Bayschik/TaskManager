@@ -41,11 +41,9 @@ class TaskAdapter(
             itemView.setOnClickListener{
                 updateClick(task)
             }
-            if (adapterPosition % 2 == 0){
-                itemView.setBackgroundColor(Color.BLACK)
-                binding.tvDesc.setTextColor(Color.WHITE)
-                binding.tvTitle.setTextColor(Color.WHITE)
-            }
+            itemView.setBackgroundColor(if (adapterPosition % 2 == 0) Color.BLACK else Color.WHITE)
+            binding.tvDesc.setTextColor(if (adapterPosition % 2 == 0) Color.WHITE else Color.BLACK)
+            binding.tvTitle.setTextColor(if (adapterPosition % 2 == 0) Color.WHITE else Color.BLACK)
         }
     }
 }

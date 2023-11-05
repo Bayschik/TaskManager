@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hw_1_4.databinding.ActivityMainBinding
 import com.example.hw_1_4.ui.data.local.Pref
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         if (!pref.isShow())
             navController.navigate(R.id.navigation_onBoardingFragment)
+
+        //Проверяем авторизовалься ли User
+        if (FirebaseAuth.getInstance().currentUser?.uid == null){
+            navController.navigate(R.id.phoneFragment)
+        }
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(

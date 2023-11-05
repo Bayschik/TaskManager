@@ -17,4 +17,10 @@
     <string name="onBoarding_title">Title</string>
     <string name="onBoarding_desc">Description</string>
     <string name="onBoarding_getStarted">Get Started</string>
+    <string name="auth_is_success">Auth is success</string>
+    <string name="btn_send_code">Send code</string>
+    <string name="tv_996">+996</string>
+    <string name="et_phone_number">Phone Number</string>
+    <string name="et_code">Code</string>
+    <string name="btn_accept">Accept</string>
 </resources>
