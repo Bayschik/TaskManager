@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.hw_1_4.databinding.ItemTaskBinding
+import com.example.hw_1_4.ui.model.Task
 
 class TaskAdapter(
-    val onclick:(task:Task)->Boolean,
+    val onclick:(task: Task)->Boolean,
     val updateClick:(task: Task)-> Boolean):Adapter<TaskAdapter.TaskViewHolder>(){
     private val list = arrayListOf<Task>()
 

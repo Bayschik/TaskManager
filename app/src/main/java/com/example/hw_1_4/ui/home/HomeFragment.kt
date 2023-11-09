@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.hw_1_4.App
 import com.example.hw_1_4.R
 import com.example.hw_1_4.databinding.FragmentHomeBinding
-import com.example.hw_1_4.ui.Task.Task
+import com.example.hw_1_4.ui.model.Task
 import com.example.hw_1_4.ui.Task.TaskAdapter
 
 class HomeFragment : Fragment() {
@@ -41,14 +41,15 @@ class HomeFragment : Fragment() {
             .setTitle("Удаление item")
             .setMessage("Удалить текс?")
 
-            .setPositiveButton("Подтвердить"){ _, _ ->
+            .setPositiveButton("Подтвердить") { _, _ ->
                 App.db.taskDao().delete(position)
                 findNavController().navigate(R.id.navigation_home)
-        }
 
-        alertDialBuilder.setNegativeButton("Отмена"){_,_ ->
-            findNavController().navigateUp()
-        }
+            }
+
+                .setNegativeButton("Отмена"){_,_ ->
+                    findNavController().navigateUp()
+                }
 
         val alertDialog = alertDialBuilder.create()
         alertDialog.show()

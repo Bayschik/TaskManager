@@ -6,17 +6,30 @@
     android:padding="16dp"
     tools:context=".ui.Task.TaskFragment">
 
-    <EditText
-        android:id="@+id/et_title"
+    <com.google.android.material.textfield.TextInputLayout
+        android:hint="@string/etTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/etTitle" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/et_desc"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/etDesc" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/etDesc" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_save"

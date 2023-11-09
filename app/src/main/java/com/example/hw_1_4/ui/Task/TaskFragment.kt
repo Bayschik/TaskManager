@@ -9,10 +9,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.hw_1_4.App
 import com.example.hw_1_4.R
 import com.example.hw_1_4.databinding.FragmentTaskBinding
+import com.example.hw_1_4.ui.model.Task
 
 class TaskFragment : Fragment() {
     private lateinit var binding: FragmentTaskBinding
-    private var task:Task? = null
+    private var task: Task? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

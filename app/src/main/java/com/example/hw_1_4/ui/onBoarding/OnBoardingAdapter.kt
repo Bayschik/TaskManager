@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.hw_1_4.databinding.ItemOnBoardingBinding
 import com.example.hw_1_4.loadImage
+import com.example.hw_1_4.ui.model.OnBoardingModel
 
 class OnBoardingAdapter(private val onClick: () -> Unit) :
     Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {

@@ -1,4 +1,4 @@
-package com.example.hw_1_4.ui.Task
+package com.example.hw_1_4.ui.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

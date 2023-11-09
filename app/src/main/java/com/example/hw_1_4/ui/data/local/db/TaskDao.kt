@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.hw_1_4.ui.Task.Task
+import com.example.hw_1_4.ui.model.Task
 
 @Dao
 interface TaskDao {

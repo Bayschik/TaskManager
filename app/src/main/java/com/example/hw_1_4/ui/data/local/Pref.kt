@@ -1,10 +1,6 @@
 package com.example.hw_1_4.ui.data.local
 
 import android.content.Context
-import android.net.Uri
-import android.preference.PreferenceManager
-import android.util.Log
-import android.widget.ImageView
 
 class Pref(context:Context) {
     private val pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
